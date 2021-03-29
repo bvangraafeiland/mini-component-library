@@ -38,16 +38,22 @@ const sizeVariables = {
     '--barPadding': '4px',
     '--wrapperRadius': '8px',
     '--barRadius': '4px',
-  }
-}
+  },
+};
 const ProgressBar = ({ value, size }) => {
   return (
-    <Wrapper style={{ ...sizeVariables[size], '--barProgress': `${value}%` }} role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}>
+    <Wrapper
+      style={{ ...sizeVariables[size], '--barProgress': `${value}%` }}
+      role="progressbar"
+      aria-valuenow={value}
+      aria-valuemin={0}
+      aria-valuemax={100}
+    >
       <PaddingWrapper>
         <Bar />
       </PaddingWrapper>
     </Wrapper>
-  )
+  );
 };
 
 export default ProgressBar;
