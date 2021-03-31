@@ -10,21 +10,23 @@ const Select = ({ label, value, onChange, children }) => {
 
   const Wrapper = styled.div`
     position: relative;
-    display: inline-block;
-  `;
-  const Select = styled.select`
-    padding: 12px 32px 12px 16px;
+    width: max-content;
     color: ${COLORS.gray700};
-    background-color: ${COLORS.transparentGray15};
-    border-radius: 8px;
-    border: none;
-    width: ${displayedValue.length * 9 + 48}px;
-    font-size: 16px;
-    appearance: none;
 
     &:hover {
       color: ${COLORS.black};
     }
+  `;
+  const Select = styled.select`
+    padding: 12px 16px;
+    background-color: ${COLORS.transparentGray15};
+    border-radius: 8px;
+    border: none;
+    width: ${displayedValue.length * 9 + 56}px;
+    font-size: 16px;
+    appearance: none;
+    color: inherit;
+    font-family: inherit;
 
     &:focus {
       outline: 1px auto;
@@ -36,13 +38,14 @@ const Select = ({ label, value, onChange, children }) => {
     top: 0;
     bottom: 0;
     margin: auto;
+    pointer-events: none;
   `;
   return (
     <Wrapper>
       <Select value={value} onChange={onChange}>
         {children}
       </Select>
-      <IconWrapper id="chevron-down" size={16} strokeWidth={2} />
+      <IconWrapper id="chevron-down" size={24} strokeWidth={2} />
     </Wrapper>
   );
 };
