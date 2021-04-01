@@ -10,16 +10,16 @@ const sizeVars = {
   small: {
     '--fontSize': `${14 / 16}rem`,
     '--inputHeight': `${24 / 16}rem`,
-    '--iconPadding': '20px',
     '--iconSize': 16,
     '--borderWidth': 1,
+    '--padding': '4px',
   },
   large: {
     '--fontSize': `${18 / 16}rem`,
     '--inputHeight': `${36 / 16}rem`,
-    '--iconPadding': '28px',
-    '--iconSize': 20,
+    '--iconSize': 24,
     '--borderWidth': 2,
+    '--padding': '8px',
   },
 };
 const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
@@ -40,8 +40,8 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     font-weight: 700;
     width: ${width}px;
     height: var(--inputHeight);
-    padding: 4px;
-    padding-left: var(--iconPadding);
+    padding: var(--padding);
+    padding-left: var(--inputHeight);
     border: none;
     border-bottom: calc(var(--borderWidth) * 1px) solid;
     outline-offset: 2px;
