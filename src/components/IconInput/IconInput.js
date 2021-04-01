@@ -9,14 +9,14 @@ import VisuallyHidden from '../VisuallyHidden';
 const sizeVars = {
   small: {
     '--fontSize': `${14 / 16}rem`,
-    '--lineHeight': `${16 / 16}rem`,
+    '--inputHeight': `${24 / 16}rem`,
     '--iconPadding': '20px',
     '--iconSize': 16,
     '--borderWidth': 1,
   },
   large: {
     '--fontSize': `${18 / 16}rem`,
-    '--lineHeight': `${21 / 16}rem`,
+    '--inputHeight': `${36 / 16}rem`,
     '--iconPadding': '28px',
     '--iconSize': 20,
     '--borderWidth': 2,
@@ -26,17 +26,9 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   const Wrapper = styled.label`
     display: block;
     position: relative;
-    border-bottom: calc(var(--borderWidth) * 1px) solid;
-    width: ${width}px;
+    width: max-content;
     color: ${COLORS.gray700};
-    padding: 4px;
-    padding-left: var(--iconPadding);
-    line-height: var(--lineHeight);
 
-    &:focus-within {
-      outline: 1px auto;
-      outline-offset: 2px;
-    }
     &:hover,
     &:focus-within {
       color: ${COLORS.black};
@@ -45,13 +37,16 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   const Input = styled.input`
     color: inherit;
     font-size: var(--fontSize);
-    border: none;
     font-weight: 700;
-    outline: none;
-    width: 100%;
-    height: var(--lineHeight);
+    width: ${width}px;
+    height: var(--inputHeight);
+    padding: 4px;
+    padding-left: var(--iconPadding);
+    border: none;
+    border-bottom: calc(var(--borderWidth) * 1px) solid;
+    outline-offset: 2px;
 
-    &:placeholder-shown {
+    &::placeholder {
       font-weight: 400;
       color: ${COLORS.gray500};
     }
