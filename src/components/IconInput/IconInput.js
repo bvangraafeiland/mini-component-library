@@ -49,6 +49,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     font-weight: 700;
     outline: none;
     width: 100%;
+    height: var(--lineHeight);
 
     &:placeholder-shown {
       font-weight: 400;
